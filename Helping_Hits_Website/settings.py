@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'myapp.apps.MyappConfig'
+    'myapp.apps.MyappConfig',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -80,6 +81,8 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
 # Password validation
