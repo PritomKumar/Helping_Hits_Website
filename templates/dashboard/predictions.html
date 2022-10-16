@@ -8,21 +8,17 @@
             <table class="table">
                 <thead>
                   <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Age</th>
-                    <th scope="col">Height</th>
-                    <th scope="col">Sex</th>
-                    <th scope="col">Prediction</th>
+                    <th scope="col">Song URL</th>
+                    <th scope="col">Predictions </th>
+                    
                   </tr>
                 </thead>
                 <tbody>
                   {% for data in predicted_sports %}
                   <tr>
-                    <th scope="row">{{ data.name }}</th>
-                    <td>{{ data.age }}</td>
-                    <td>{{ data.height }}</td>
-                    <td>{{ data.sex }}</td>
+                    <th scope="row">{{ data.song_url }}</th>
                     <td>{{ data.predictions }}</td>
+                   
                   </tr>
                   {% endfor %}
                 </tbody>
