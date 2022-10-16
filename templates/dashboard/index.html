@@ -1,7 +1,7 @@
 {% extends 'partials/base.html' %}
 {% block title %}Home{% endblock %}
 {% load crispy_forms_tags %}
-{% block content  %}
+{% block content %}
 <div class="container">
     <div class="row mt-4">
         <div class="col-md-8 offset-md-2">
@@ -10,7 +10,9 @@
                     <form method="POST">
                         {% csrf_token %}
                         {{ form|crispy }}
-                        <input class="btn btn-info" type="submit" value="Make Prediction">
+                        <!-- <input class="btn btn-info" type="submit" value="Make Prediction"> -->
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"
+                            value="Make Prediction">Search</button>
                     </form>
                 </div>
             </div>
@@ -27,21 +29,22 @@
                     <form method="POST">
                         <nav class="navbar navbar-light bg-light">
                             <form class="form-inline">
-                              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                                <input class="form-control mr-sm-2" type="search" placeholder="Search"
+                                    aria-label="Search">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                             </form>
-                          </nav>
+                        </nav>
                         <div class="input-group">
                             <div class="form-outline">
-                              <input type="search" id="form1" class="form-control" />
-                              <label class="form-label" for="form1">Search</label>
+                                <input type="search" id="form1" class="form-control" />
+                                <label class="form-label" for="form1">Search</label>
                             </div>
                             {% csrf_token %}
                             {{crispy }}
                             <button type="submit" class="btn btn-primary">
-                              <i class="fas fa-search"></i>
+                                <i class="fas fa-search"></i>
                             </button>
-                          </div>
+                        </div>
                     </form>
                 </div>
             </div>

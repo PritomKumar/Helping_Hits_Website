@@ -10,7 +10,7 @@ def index(request):
         form = DataForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('dashboard-predictions')
+            return redirect('myapp-predictions')
     else:
         form = DataForm()
     context = {

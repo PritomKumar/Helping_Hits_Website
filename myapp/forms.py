@@ -3,6 +3,7 @@ from .models import Data
 
 
 class DataForm(forms.ModelForm):
+    song_url = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Search'}))
     class Meta:
         model = Data
         fields = ['song_url']
