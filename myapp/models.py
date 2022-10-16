@@ -7,10 +7,12 @@ import joblib
 
 class Data(models.Model):
     song_url = models.CharField(max_length=1000, null=True)
+    predictions = models.CharField(max_length=100, blank=True)
+
     
-    
-    # def save(self, *args, **kwargs):
-    #     return super().save(*args, *kwargs)
+    def save(self, *args, **kwargs):
+        self.predictions = 'special prediction = ' + self.song_url 
+        return super().save(*args, *kwargs)
 
     def __str__(self):
         return self.song_url

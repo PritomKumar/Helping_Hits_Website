@@ -6,3 +6,4 @@ class DataForm(forms.ModelForm):
     class Meta:
         model = Data
         fields = ['song_url']
+
