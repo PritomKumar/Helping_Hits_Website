@@ -11,10 +11,10 @@ import warnings
 warnings.filterwarnings("ignore")
 
 FEATURE_COLUMNS = ['popularity', 'danceability', 'energy', 'key', 'loudness', 'speechiness', 'mode', 'acousticness', 'instrumentalness', 'liveness', 'valence', 'tempo', 'duration_ms', 'time_signature']
-SCALER_POP = joblib.load(filename = './objects/scaler_pop')
-SCALER_FLOATS = joblib.load(filename = './objects/scaler_floats')
-MODEL = joblib.load(filename = './objects/predictor')
-PLAYLIST_NAME_TO_URL = joblib.load(filename = './objects/playlist_name_to_url')
+SCALER_POP = joblib.load(filename = 'python_code_from_miksu\src\objects\scaler_pop')
+SCALER_FLOATS = joblib.load(filename = 'python_code_from_miksu\src\objects\scaler_floats')
+MODEL = joblib.load(filename = 'python_code_from_miksu\src\objects\predictor')
+PLAYLIST_NAME_TO_URL = joblib.load(filename = 'python_code_from_miksu\src\objects\playlist_name_to_url')
 
 '''
 Given the url, returns unique id of the song
@@ -110,8 +110,8 @@ def main(sp):
 
 if __name__ == "__main__":
     #Make a config file to hide the client secret
-    SPOTIPY_CLIENT_ID = ''
-    SPOTIPY_CLIENT_SECRET = ''
+    SPOTIPY_CLIENT_ID = '39b07ea7cb4041f1b54a3afb88fe13b1'
+    SPOTIPY_CLIENT_SECRET = 'cdd5c919a860401fa5e65ff8dc4c5363'
     REDIRECT_URI = 'http://localhost:7000/callback'
     scope = "user-library-read"
 
