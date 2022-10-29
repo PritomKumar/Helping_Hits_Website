@@ -20,8 +20,8 @@ def index(request):
 
 
 def predictions(request):
-    predicted_sports = Data.objects.all()
+    predicted_song_urls = Data.objects.all()
     context = {
-        'predicted_sports': predicted_sports
+        'predicted_sports': predicted_song_urls
     }
     return render(request, 'dashboard/predictions.html', context)
