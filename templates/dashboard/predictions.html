@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row mt-4">
         <div class="col-md-8 offset-md-2">
-          <p>{{predicted_sports}}</p>
+          
          
             <table class="table">
                 <thead>
@@ -16,13 +16,13 @@
                   </tr>
                 </thead>
                 <tbody>
-                   {% comment %}{% for data in predicted_sports %}
+                   
                   <tr>
-                    <th scope="row">{{ data.song_url }}</th>
-                    <td>{{ data.predictions }}</td>
+                    <th scope="row">{{ predicted_song_urls.song_url }}</th>
+                    <td>{{ predicted_song_urls.predictions }}</td>
                    
                   </tr>
-                  {% endfor %}{% endcomment %}
+                  
                 </tbody>
               </table>
               
