@@ -20,7 +20,7 @@ def index(request):
 
 
 def predictions(request):
-    predicted_song_urls = Data.objects.all()
+    predicted_song_urls = Data.objects.all().last()
     context = {
         'predicted_sports': predicted_song_urls
     }
