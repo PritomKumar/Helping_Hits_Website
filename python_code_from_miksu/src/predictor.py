@@ -93,7 +93,9 @@ The test function can be used for trying out the functionality
 '''
 def main(sp):
 
-    url = input('Give song url: ')
+    # url = input('Give song url: ')
+    # Nightwish - The phantom of the Opera
+    url = "https://open.spotify.com/track/2WmbbiWfFEKsSZe6E5GeVe?si=16c6cde2dd3d4da6"
     id = url_to_id(url)
     print(id)
 
