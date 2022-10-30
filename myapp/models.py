@@ -16,6 +16,7 @@ class Data(models.Model):
 
     def save(self, *args, **kwargs):
         playlists = predictor.predict_songs(self.song_url)
+        print(playlists)
         self.predictions = playlists
         # self.predictions = 'special prediction = ' + self.song_url
         return super().save(*args, *kwargs)
