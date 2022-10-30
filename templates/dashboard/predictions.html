@@ -3,9 +3,9 @@
 {% load static %}
 
 {% block content %}
+<div class="container mt-4">
+  <section class="wrapper">
 
-<section class="wrapper">
-  <div class="container">
     <div class="row">
       <div class="col text-center mb-5">
         <h1 class="display-4">{{predicted_song_urls.predictions}}</h1>
@@ -13,21 +13,32 @@
         <p class="lead">Click on the cards to go to spotify page </p>
       </div>
     </div>
-    {% for keys, values in predicted_song_urls %}
-    <div class="card" style="width: 18rem; background-image:linear-gradient( rgba(31, 223, 100, 0.9), rgba(0,51,0,1.0));">
-      <div class="card-header">Playlist Name </div>
-      <div class="card-body">
-        <h5 class="card-title">{{values}}</h5>
-        <a href="" class="btn btn-primary">Go somewhere</a>
+    <div class="container mt-2">
+      <div class="row hidden-md-up">
+        {% for keys, values in predicted_song_urls %}
+
+        <div class="col-auto mb-4">
+          <div class="card" style="width: 18rem; ">
+            <div class="card-header"
+              style=" background-image:linear-gradient( to right, rgba(31, 223, 100, 0.9), rgba(0,51,0,1.0));">Playlist
+              Name </div>
+            <div class="card-body">
+              <h5 class="card-title">{{keys}}</h5>
+              <br>
+              <a href="{{values}}" class="btn btn-warning stretched-link btn-sm" target="_blank">View in Spotify</a>
+            </div>
+          </div>
+        </div>
+
+        {% endfor %}
       </div>
     </div>
-    {% endfor %}
-    
+
   </section>
-  
+</div>
 
 <section class="wrapper">
-  
+
 </section>
 
 <div class="container">
