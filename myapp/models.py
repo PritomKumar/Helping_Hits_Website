@@ -2,6 +2,8 @@ from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 from sklearn.tree import DecisionTreeClassifier
 import joblib
+from .import predictor
+
 
 # Create your models here.
 
@@ -11,7 +13,9 @@ class Data(models.Model):
     predictions = models.CharField(max_length=100, blank=True)
 
     def save(self, *args, **kwargs):
-        self.predictions = 'special prediction = ' + self.song_url
+        playlists = predictor.predict_songs(self.song_url)
+        self.predictions = playlists
+        # self.predictions = 'special prediction = ' + self.song_url
         return super().save(*args, *kwargs)
 
     def __str__(self):
