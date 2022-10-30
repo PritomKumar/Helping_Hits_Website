@@ -8,9 +8,8 @@
 
     <div class="row">
       <div class="col text-center mb-5">
-        <h1 class="display-4">{{predicted_song_urls.predictions}}</h1>
-        <h1 class="display-4">Here are some recommended playlists</h1>
-        <p class="lead">Click on the cards to go to spotify page </p>
+        <h1 class="display-4" style="font-family: 'Raleway', sans-serif;">Here are some recommended playlists</h1>
+        <p class="lead" style="font-family: 'Comic sans MS', sans-serif;">Click on the cards to go to spotify page </p>
       </div>
     </div>
     <div class="container mt-2">
@@ -20,12 +19,14 @@
         <div class="col-auto mb-4">
           <div class="card" style="width: 18rem; ">
             <div class="card-header"
-              style=" background-image:linear-gradient( to right, rgba(31, 223, 100, 0.9), rgba(0,51,0,1.0));">Playlist
+              style=" background-image:linear-gradient( to right, rgba(31, 223, 100, 0.9), rgba(0,51,0,0.8));">Playlist
               Name </div>
-            <div class="card-body">
-              <h5 class="card-title">{{keys}}</h5>
+            <div class="card-body text-center">
+             <h4 class="card-title" style="font-family: 'Raleway', sans-serif;">{{keys}}</h5>
+              <!-- <font face = "Comic sans MS" ><h5 class="card-title" style="font-family: 'Roboto', sans-serif;">{{keys}}</h5></font> -->
+
               <br>
-              <a href="{{values}}" class="btn btn-warning stretched-link btn-sm" target="_blank">View in Spotify</a>
+              <a href="{{values}}" class="btn btn-warning stretched-link btn-sm " target="_blank">View in Spotify</a>
             </div>
           </div>
         </div>
