@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.core.validators import URLValidator
 from sklearn.tree import DecisionTreeClassifier
 import joblib
 from .import predictor
@@ -9,7 +10,8 @@ from .import predictor
 
 
 class Data(models.Model):
-    song_url = models.CharField(max_length=1000, null=True)
+    # song_url = models.CharField(max_length=1000, null=True)
+    song_url = models.URLField(max_length=1000, blank=True, null=True)
     predictions = models.CharField(max_length=100, blank=True)
 
     def save(self, *args, **kwargs):

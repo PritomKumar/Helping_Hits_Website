@@ -4,14 +4,41 @@
 {% load crispy_forms_tags %}
 {% block content %}
 <div class="container">
+
+    <div class="row height d-flex justify-content-center align-items-center">
+
+      <div class="col-md-8">
+
+        <!-- <div class="search"> -->
+          
+          <div class="card shadow">
+            <div class="card-body">
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <!-- <input class="btn btn-info" type="submit" value="Make Prediction"> -->
+                    <!-- <input type="text" class="form-control" placeholder="Have a question? Ask Now"> -->
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"
+                        value="Make Prediction">Search</button>
+                </form>
+            </div>
+        <!-- </div> -->
+        </div>
+        
+      </div>
+      
+    </div>
+</div>
+<!-- <div class="container">
     <div class="row mt-4">
+        <div class="row height d-flex justify-content-center align-items-center">
         <div class="col-md-8 offset-md-2">
             <div class="card shadow">
                 <div class="card-body">
                     <form method="POST">
                         {% csrf_token %}
                         {{ form|crispy }}
-                        <!-- <input class="btn btn-info" type="submit" value="Make Prediction"> -->
+                        <input class="btn btn-info" type="submit" value="Make Prediction">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit"
                             value="Make Prediction">Search </button>
                     </form>
@@ -19,7 +46,8 @@
             </div>
         </div>
     </div>
-</div>
+    </div>
+</div> -->
 
 <!-- 
 <div class="container">
