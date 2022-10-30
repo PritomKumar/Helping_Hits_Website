@@ -1,17 +1,95 @@
-
 {% extends 'partials/base.html' %}
 {% block title %}Prediction{% endblock %}
 {% load static %}
 
-{% block content  %}
+{% block content %}
 
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+<section class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col text-center mb-5">
+        <h1 class="display-4">{{predicted_song_urls.predictions}}</h1>
+        <h1 class="display-4">Here are some recommended playlists</h1>
+        <p class="lead">Click on the cards to go to spotify page </p>
+      </div>
+    </div>
+    {% for keys, values in predicted_song_urls %}
+    <div class="card" style="width: 18rem; background-image:linear-gradient( rgba(31, 223, 100, 0.9), rgba(0,51,0,1.0));">
+      <div class="card-header">Playlist Name </div>
+      <div class="card-body">
+        <h5 class="card-title">{{values}}</h5>
+        <a href="" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+    {% endfor %}
+    
+  </section>
+  
+
+<section class="wrapper">
+  
+</section>
+
+<div class="container">
+  <div class="row mt-4">
+    <div class="col-md-8 offset-md-2">
+
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Song URL</th>
+            <th scope="col">Predictions </th>
+
+          </tr>
+        </thead>
+        <tbody>
+          {% for keys, values in predicted_song_urls %}
+          <tr>
+            <th scope="row">{{ keys }}</th>
+            <td>{{ values }}</td>
+
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+    </div>
   </div>
 </div>
+
+
+<!-- <div class="container">
+  <div class="row mt-4">
+      <div class="col-md-8 offset-md-2">
+          <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Song URL</th>
+                  <th scope="col">Predictions </th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                {% comment %}
+
+
+                {% for data in predicted_sports %}
+                <tr>
+                  <th scope="row">{{ data.song_url }}</th>
+                  <td>{{ data.predictions }}</td>
+                 
+                </tr>
+                {% endfor %}
+
+
+                {% endcomment %}
+              </tbody>
+            </table>
+      </div>
+  </div>
+</div> -->
+
 
 <!-- <section class="wrapper">
   <div class="container">
@@ -158,63 +236,4 @@
   </div>
 </section> -->
 
-<div class="container">
-    <div class="row mt-4">
-        <div class="col-md-8 offset-md-2">
-          
-         
-            <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">Song URL</th>
-                    <th scope="col">Predictions </th>
-                    
-                  </tr>
-                </thead>
-                <tbody>
-                  {% for keys, values in predicted_song_urls %}  
-                  <tr>
-                    <th scope="row">{{ keys }}</th>
-                    <td>{{ values }}</td>
-                   
-                  </tr>
-                  {% endfor %}
-                </tbody>
-              </table>
-              
-        </div>
-    </div>
-</div>
-
-
-<!-- <div class="container">
-  <div class="row mt-4">
-      <div class="col-md-8 offset-md-2">
-          <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">Song URL</th>
-                  <th scope="col">Predictions </th>
-                  
-                </tr>
-              </thead>
-              <tbody>
-                {% comment %}
-
-
-                {% for data in predicted_sports %}
-                <tr>
-                  <th scope="row">{{ data.song_url }}</th>
-                  <td>{{ data.predictions }}</td>
-                 
-                </tr>
-                {% endfor %}
-
-
-                {% endcomment %}
-              </tbody>
-            </table>
-      </div>
-  </div>
-</div> -->
 {% endblock %}
