@@ -79,8 +79,12 @@ WSGI_APPLICATION = 'Helping_Hits_Website.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dbi0o9i8f99fmc',
+        'HOST': 'ec2-34-233-115-14.compute-1.amazonaws.com',
+        'PORT': 5432,
+        'USER' : 'imnvvenhgpgxks',
+        'PASSWORD': '3bdbb43d32f16992b09fd513ae0b7f48e1b864a406ecfcba4c62d5a43edbbf3c',
     }
 }
 
