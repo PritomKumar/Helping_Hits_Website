@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-p0uoc4z^n9ajl%2uf4a4m$309ihcc1e$2+tz_+pl2lqfi2p$cm'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['helping-hits.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -50,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'Helping_Hits_Website.urls'
@@ -126,7 +127,7 @@ MEDIA_URL = '/images/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 ALLOWED_HOSTS = ['helping-hits.herokuapp.com']
 
