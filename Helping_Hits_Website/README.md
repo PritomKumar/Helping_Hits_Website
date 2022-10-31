@@ -1,1 +1,1 @@
-Find similar playlists for your spoitify song.
+Find similar playlists for your spotify song.
