@@ -7,14 +7,20 @@ import numpy as np
 import joblib
 from sklearn.preprocessing import MinMaxScaler
 
+from pathlib import Path
+import os
+
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+
 import warnings
 warnings.filterwarnings("ignore")
-
 FEATURE_COLUMNS = ['popularity', 'danceability', 'energy', 'key', 'loudness', 'speechiness', 'mode', 'acousticness', 'instrumentalness', 'liveness', 'valence', 'tempo', 'duration_ms', 'time_signature']
-SCALER_POP = joblib.load(filename = '.\ml_model\objects\scaler_pop')
-SCALER_FLOATS = joblib.load(filename = '.\ml_model\objects\scaler_floats')
-MODEL = joblib.load(filename = '.\ml_model\objects\predictor')
-PLAYLIST_NAME_TO_URL = joblib.load(filename = '.\ml_model\objects\playlist_name_to_url')
+SCALER_POP = joblib.load(filename = os.path.join(BASE_DIR, 'ml_model\objects\scaler_pop'))
+SCALER_FLOATS = joblib.load(filename = os.path.join(BASE_DIR, 'ml_model\objects\scaler_floats'))
+MODEL = joblib.load(filename = os.path.join(BASE_DIR, 'ml_model\objects\predictor'))
+PLAYLIST_NAME_TO_URL = joblib.load(filename = os.path.join(BASE_DIR, 'ml_model\objects\playlist_name_to_url'))
 
 '''
 Given the url, returns unique id of the song
