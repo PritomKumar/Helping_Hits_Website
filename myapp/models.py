@@ -12,7 +12,7 @@ from .import predictor
 class Data(models.Model):
     # song_url = models.CharField(max_length=1000, null=True)
     song_url = models.URLField(max_length=1000, blank=True, null=True)
-    predictions = models.CharField(max_length=100, blank=True)
+    predictions = models.CharField(max_length=2000, blank=True)
 
     def save(self, *args, **kwargs):
         playlists = predictor.predict_songs(self.song_url)
